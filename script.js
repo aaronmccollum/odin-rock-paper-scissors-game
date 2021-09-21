@@ -51,6 +51,7 @@ let playRound = (playerSelection, computerPlay) => {
 }
 
 // Function to play game 5 times and keep score
+// DOES NOT WORK YET
 let game = () => {
     let computerSelection = computerPlay();
 
