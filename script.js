@@ -1,5 +1,5 @@
 // Function representing the Computer's turn - output is either 'Rock', 'Paper', 'Sissors'
-let computerPlay = () => {
+function computerPlay() {
     let rockNum = 0;
     let paperNum = 1;
     let returnNum = Math.floor(Math.random() * 3);
@@ -16,7 +16,7 @@ let computerPlay = () => {
 
 // Function representing a complete round of Rock, Paper, Sissors
 let playRound = (playerSelection, computerPlay) => {
-    // Player plays "Rock"
+	// Player plays "Rock"
     if (playerSelection === "rock") {
         if (computerPlay === "paper") {
             return "You lose! Paper beats Rock!";
@@ -52,8 +52,8 @@ let playRound = (playerSelection, computerPlay) => {
 
 // Function to play game 5 times and keep score
 let game = () => {
+    let computerSelection = computerPlay();
+
     // playing the game five times
-    for (let i = 0; i < 5; i++) {
-        playRound();
-    }
+    return playRound(playerSelection, computerSelection);
 }
