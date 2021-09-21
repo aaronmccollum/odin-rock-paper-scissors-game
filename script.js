@@ -15,7 +15,7 @@ let computerPlay = () => {
 }
 
 // Function representing a complete round of Rock, Paper, Sissors
-let gamePlay = (playerSelection, computerPlay) => {
+let playRound = (playerSelection, computerPlay) => {
     // Player plays "Rock"
     if (playerSelection === "rock") {
         if (computerPlay === "paper") {
@@ -47,5 +47,13 @@ let gamePlay = (playerSelection, computerPlay) => {
         } else {
             return "You win! Sissors beats Paper!";
         }
+    }
+}
+
+// Function to play game 5 times and keep score
+let game = () => {
+    // playing the game five times
+    for (let i = 0; i < 5; i++) {
+        playRound();
     }
 }
