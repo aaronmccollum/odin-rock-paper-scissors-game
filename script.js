@@ -10,7 +10,7 @@ function computerPlay() {
     } else if (returnNum === paperNum) {
         return "Paper";
     } else {
-        return "Sissors";
+        return "Scissors";
     }
 }
 
@@ -23,14 +23,14 @@ let playRound = (playerSelection, computerPlay) => {
         } else if (computerPlay === "rock") {
             return "It's a tie, try again!";
         } else {
-            return "You win! Rock beats Sissors!";
+            return "You win! Rock beats Scissors!";
         }
     }
 
     // Player plays "Paper"
     if (playerSelection === "paper") {
-        if (computerPlay === "sissors") {
-            return "You lose! Sissors beats Paper!";
+        if (computerPlay === "scissors") {
+            return "You lose! Scissors beats Paper!";
         } else if (computerPlay === "paper") {
             return "It's a tie, try again!";
         } else {
@@ -39,13 +39,13 @@ let playRound = (playerSelection, computerPlay) => {
     }
 
     // Player plays "Sissors"
-    if (playerSelection === "sissors") {
+    if (playerSelection === "scissors") {
         if (computerPlay === "rock") {
-            return "You lose! Rock beats Sissors!";
-        } else if (computerPlay === "sissors") {
+            return "You lose! Rock beats Scissors!";
+        } else if (computerPlay === "scissors") {
             return "It's a tie, try again!";
         } else {
-            return "You win! Sissors beats Paper!";
+            return "You win! Scissors beats Paper!";
         }
     }
 }
