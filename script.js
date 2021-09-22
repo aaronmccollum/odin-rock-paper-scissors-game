@@ -1,5 +1,5 @@
 // Function representing the Computer's turn - output is either 'Rock', 'Paper', 'Sissors'
-function computerPlay() {
+let computerPlay = () => {
     let rockNum = 0;
     let paperNum = 1;
     let returnNum = Math.floor(Math.random() * 3);
