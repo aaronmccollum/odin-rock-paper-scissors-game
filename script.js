@@ -1,60 +1,30 @@
-// Function representing the Computer's turn - output is either 'Rock', 'Paper', 'Sissors'
-let computerPlay = () => {
-    let rockNum = 0;
-    let paperNum = 1;
-    let returnNum = Math.floor(Math.random() * 3);
+function computerPlay() {
+    let [throwRock, throwPaper] = [0, 1];
+    let randomPick = Math.floor(Math.random() * 3);
 
-    //change this to terciary form later
-    if (returnNum === rockNum) {
+    if (randomPick === throwRock) {
         return "Rock";
-    } else if (returnNum === paperNum) {
+    } else if (randomPick === throwPaper) {
         return "Paper";
     } else {
         return "Scissors";
     }
-}
+};
 
-// Function representing a complete round of Rock, Paper, Sissors
-let playRound = (playerSelection, computerPlay) => {
-	// Player plays "Rock"
-    if (playerSelection === "rock") {
-        if (computerPlay === "paper") {
-            return "You lose! Paper beats Rock!";
-        } else if (computerPlay === "rock") {
-            return "It's a tie, try again!";
-        } else {
-            return "You win! Rock beats Scissors!";
-        }
+function playRound(playerSelection, computerSelection) {
+    // computer throws Rock
+    if (computerSelection === "rock" && playerSelection === "scissors") {
+        return "You lose! Rock beats Scissors";
+    } else if (computerSelection === "rock" && playerSelection === "rock") {
+        return "It's a tie, try again.";
+    } else {
+        return "You win! Paper beats Rock!";
     }
 
-    // Player plays "Paper"
-    if (playerSelection === "paper") {
-        if (computerPlay === "scissors") {
-            return "You lose! Scissors beats Paper!";
-        } else if (computerPlay === "paper") {
-            return "It's a tie, try again!";
-        } else {
-            return "You win! Paper beats Rock!";
-        }
-    }
+    // computer throws Paper
 
-    // Player plays "Sissors"
-    if (playerSelection === "scissors") {
-        if (computerPlay === "rock") {
-            return "You lose! Rock beats Scissors!";
-        } else if (computerPlay === "scissors") {
-            return "It's a tie, try again!";
-        } else {
-            return "You win! Scissors beats Paper!";
-        }
-    }
+    // computer throws Scissors
 }
 
-// Function to play game 5 times and keep score
-// DOES NOT WORK YET
-let game = () => {
-    let computerSelection = computerPlay();
-
-    // playing the game five times
-    return playRound(playerSelection, computerSelection);
-}
+const playerSelection = "rock";
+const computerSelection = computerPlay();
