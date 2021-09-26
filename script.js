@@ -48,3 +48,8 @@ function playRound(playerSelection, computerSelection) {
 
 const playerSelection = prompt("What do you want to throw?").toLowerCase();
 const computerSelection = computerPlay();
+
+function game() {
+    var resultArr = [];
+    
+}
