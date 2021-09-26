@@ -50,6 +50,20 @@ const playerSelection = prompt("What do you want to throw?").toLowerCase();
 const computerSelection = computerPlay();
 
 function game() {
-    var resultArr = [];
-    
+    let resultArr = [];
+
+    for (let i = 0; i < 5; i++) {
+        let result = playRound(playerSelection, computerSelection);
+        if (result.includes('WIN')) {
+            resultArr.push("user");
+        }
+		if (result.includes('tie')) {
+			resultArr.push(" ")
+		}
+        if (result.includes("lose")) {
+            resultArr.push("comp");
+        }
+    }
+	
+    return resultArr;
 }
