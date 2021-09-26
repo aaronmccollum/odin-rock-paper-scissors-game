@@ -51,19 +51,39 @@ const computerSelection = computerPlay();
 
 function game() {
     let resultArr = [];
-
+	let result;
+	// Go through game five times and push result to array
     for (let i = 0; i < 5; i++) {
-        let result = playRound(playerSelection, computerSelection);
+        result = playRound(playerSelection, computerSelection);
         if (result.includes('WIN')) {
             resultArr.push("user");
         }
-	if (result.includes('tie')) {
-	    resultArr.push(" ");
-	}
+		if (result.includes('tie')) {
+		    resultArr.push(" ");
+		}
         if (result.includes("lose")) {
             resultArr.push("comp");
         }
     }
+
+    // Iterate through resultArr and count score
+    let userScore = 0;
+    let compScore = 0;
+    for (let i = 0; i < 5; i++) {
+        if (resultArr[i] === 'user') {
+            userScore += 1;
+        }
+        if (resultArr[i] === 'comp') {
+            compScore += 1;
+        }
+    }
 	
-    return resultArr;
+    // Compare scores and return message
+    if (userScore > compScore) {
+        return "YOU WIN!  User: " + userScore + "  Computer: " + compScore;
+    } else if (userScore = compScore) {
+        return "It's a tie. You both scored " + userScore;
+    } else {
+        return "You lost. User: " + userScore + "  Computer: " + compScore;
+    }
 }
