@@ -1,47 +1,50 @@
+//Function that returns the value of the Computer's choice
 function computerPlay() {
     let [throwRock, throwPaper] = [0, 1];
     let randomPick = Math.floor(Math.random() * 3);
 
     if (randomPick === throwRock) {
-        return "Rock";
+        return "rock";
     } else if (randomPick === throwPaper) {
-        return "Paper";
+        return "paper";
     } else {
-        return "Scissors";
+        return "scissors";
     }
 };
 
+// Function that runs one iteration of the game
 function playRound(playerSelection, computerSelection) {
-    if (computerSelection === "rock") {
+	// Computer throws "rock"
+	if (computerSelection === "rock") {
         if (playerSelection === "paper") {
-            return "You win! Paper beats Rock!";
+            return "YOU WIN! The computer threw ROCK and you threw PAPER.";
         } else if (playerSelection === "rock") {
-            return "It's a tie, try again.";
+            return "It's a tie, both you and the computer threw ROCK.";
         } else {
-            return "You lose. Rock beats Scissors.";
+            return "You lose, the computer threw ROCK and you threw SCISSORS.";
         }
     }
-
+    // Computer throws "paper"
     if (computerSelection === "paper") {
         if (playerSelection === "scissors") {
-            return "You win! Scissors beats Paper.";
+            return "YOU WIN! The computer threw PAPER and you threw SCISSORS.";
         } else if (playerSelection === "paper") {
-            return "It's a tie, try again.";
+            return "It's a tie, both you and the computer threw PAPER.";
         } else {
-            return "You lose. Paper beats Rock.";
+            return "You lose, the computer threw PAPER and you threw ROCK.";
         }
     }
-
+    // Computer throws "scissors"
     if (computerSelection === "scissors") {
         if (playerSelection === "rock") {
-            return "You win! Rock beats Scissors.";
+            return "YOU WIN! The computer threw SCISSORS and you threw ROCK.";
         } else if (playerSelection === "scissors") {
-            return "It's a tie, try again.";
+            return "It's a tie, both you and the computer threw SCISSORS.";
         } else {
-            return "You lose. Scissors beats Paper.";
+            return "You lose. the computer threw SCISSORS and you threw PAPER.";
         }
     }
 };
 
-const playerSelection = "rock";
+const playerSelection = prompt("What do you want to throw?").toLowerCase();
 const computerSelection = computerPlay();
